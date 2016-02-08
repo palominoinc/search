@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <extension id="exteWoRTkXLkviN5" name="search" webpalschematype="wpExtension">
+  <README id="READut3IeH72OBHF" __stub="yes"/>
   <views id="viewuQyI4ZQ4K3Xl" __stub="yes"/>
   <routes id="routIg1P8jahBGZE" __stub="yes"/>
   <controllers id="contLJazk8Mn3hUX" __stub="yes"/>
