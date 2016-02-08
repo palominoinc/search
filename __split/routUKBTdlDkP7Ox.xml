@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<route controller="\Search\Controllers\SearchesController@index" id="routUKBTdlDkP7Ox" pattern="/sitesearch" verb="get" webpalschematype="wpAppRoute"/>

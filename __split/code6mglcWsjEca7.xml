@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<code-view design="default" id="code6mglcWsjEca7" lang="any" name="index" webpalschematype="wpAppFormCode">&lt;style&gt;
+  .search-container em {
+/*     color: blue; */
+    font-weight: bold;
+  }
+  
+  .search-result {
+    margin: 20px 0;
+  }
+&lt;/style&gt;
+&lt;div class="search-container"&gt;
+  &lt;h1&gt;
+    Search Result
+  &lt;/h1&gt;
+  &lt;br /&gt;
+  &lt;br /&gt;
+  @if(!empty($items))
+  @foreach ($items as $item)
+  &lt;div class="search-result"&gt;
+    &lt;div class="search-result-block"&gt;
+      &lt;div class="search-result-block-container"&gt;
+        @if (! empty( $item-&gt;title ))
+        &lt;a href="{{ $item-&gt;url }}"&gt;&lt;h2&gt;{{ $item-&gt;title }}&lt;/h2&gt;&lt;/a&gt;
+        @else
+        &lt;a href="{{ $item-&gt;url }}"&gt;&lt;h2&gt;{{ $item-&gt;name }}&lt;/h2&gt;&lt;/a&gt;
+        @endif
+        &lt;div class="content"&gt;
+          {{ $item-&gt;text }}
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  @endforeach
+  @endif
+  @if ($page &amp;&amp; $page &gt; 2)
+  &lt;div class="prev"&gt;
+    &lt;a class="prev-link" href="/sitesearch?query={{{ $query }}}&amp;amp;page={{{ $page - 2 }}}&amp;amp;type={{{ $types }}}&amp;amp;size={{{ $size }}}"&gt;{{ 'Previous' }}&lt;/a&gt;
+  &lt;/div&gt;
+  @endif
+ 
+  @if ($more)
+  &lt;div class="next"&gt;
+    &lt;a class="next-link" href="/sitesearch?query={{{ $query }}}&amp;amp;page={{{ $page }}}&amp;amp;type={{{ $types }}}&amp;amp;size={{{ $size }}}"&gt;{{ 'Next' }}&lt;/a&gt;
+  &lt;/div&gt;
+  @elseif ($refine)
+  &lt;div class="no-results"&gt;
+    Please refine your search for optimal results.
+  &lt;/div&gt;
+  @elseif (empty($items))
+  &lt;div class="no-results"&gt;
+    No result
+  &lt;/div&gt;
+  @endif
+&lt;/div&gt;</code-view>
